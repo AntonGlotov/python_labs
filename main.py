@@ -18,3 +18,12 @@ def max_isprime_divide(x):
     return mx
 
 
+def function2(x):
+    list = [int(x) for x in str(x)]
+    pr = 1
+
+    for i in list:
+        if i % 5 != 0:
+            pr *= i
+    return pr
+
