@@ -16,3 +16,8 @@ def count_even_words(s2):
         if len(i) % 2 == 0:
             count += 1
     return count
+
+
+def flag_sort(colors):
+    sorted_colors = sorted(colors, key=lambda x: x[1])
+    return sorted_colors
