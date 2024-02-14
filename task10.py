@@ -2,16 +2,15 @@ def sort_string():
     num_strings = int(input("Введите количество строк: "))
     strings = []
     for i in range(num_strings):
-        string = input("Введите строку : ")
-        strings.append(string)
-    sorted_strings = sorted(strings, key=len)
+        str1 = input(f"Введите строку : ")
+        strings.append(str1)
+    sorted_strings = sorted(strings, key=lambda x: len(x.split()))
 
     return sorted_strings
 
 
 sorted_strings = sort_string()
 
-
-print("Отсортированный список по длине строк:")
+print("\nОтсортированный список по количеству слов в строке:")
 for string in sorted_strings:
     print(string)
