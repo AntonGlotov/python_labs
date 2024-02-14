@@ -20,4 +20,24 @@ def count_even_words(s2):
 
 def flag_sort(colors):
     sorted_colors = sorted(colors, key=lambda x: x[1])
-    return sorted_colors
+    color = ' '.join(sorted_colors)
+    return color
+
+
+print("1 - Перемешать слова в предложении\n"
+      "2 - Посчитать количество слов в предложении с четным количеством символов\n"
+      "3 - Отсортировать цвета в порядке флага России\n"
+      "Выберите, чем хотите заняться:")
+
+number = int(input())
+
+if number == 1:
+    print("Напишите свое предложение: ")
+    print(shuffle(input()))
+elif number == 2:
+    print("Напишите свое предложение: ")
+    print(count_even_words(input()))
+elif number == 3:
+    print("Напишите цвета через пробел: ")
+    color = input().split()
+    print(flag_sort(color))
