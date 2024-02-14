@@ -30,3 +30,19 @@ def str_min_number(sentence):
     return mn
 
 
+print("1 - Посчитать количество русских символов в строке\n"
+      "2 - Найти все строчные латинские символы строки\n"
+      "3 - Найти минимальное из имеющихся в строке целых чисел\n"
+      "Выберите, чем хотите заняться:")
+
+number = int(input())
+
+if number == 1:
+    print("Напишите свое предложение: ")
+    print(count_russian(input()))
+elif number == 2:
+    print("Напишите свое предложение: ")
+    print(str_symb_lat(input()))
+elif number == 3:
+    print("Напишите свое предложение: ")
+    print(str_min_number(input()))
