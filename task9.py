@@ -1,4 +1,4 @@
-def read_and_sort_strings():
+def sort_string():
     num_strings = int(input("Введите количество строк: "))
     strings = []
     for i in range(num_strings):
@@ -11,7 +11,7 @@ def read_and_sort_strings():
     return sorted_strings
 
 
-sorted_strings = read_and_sort_strings()
+sorted_strings = sort_string()
 
 
 print("Отсортированный список по длине строк:")
