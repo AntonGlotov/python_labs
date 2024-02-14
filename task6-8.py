@@ -21,3 +21,12 @@ def str_symb_lat(sentence):
             result.append(i)
     return result
 
+
+def str_min_number(sentence):
+    mn = '9'
+    for i in sentence:
+        if ord('0') < ord(i) < ord('9') and ord(i) < ord(mn):
+            mn = i
+    return mn
+
+
