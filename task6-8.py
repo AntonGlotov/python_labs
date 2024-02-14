@@ -4,10 +4,20 @@ def is_russian(symb):
         return True
     return False
 
+
 def count_russian(sentence):
     count = 0
     for i in sentence:
         if is_russian(i):
             count += 1
     return count
+
+
+def str_symb_lat(sentence):
+    result = []
+    str_lat = [ord('a'), ord('z')]
+    for i in sentence:
+        if str_lat[0] < ord(i) < str_lat[1]:
+            result.append(i)
+    return result
 
