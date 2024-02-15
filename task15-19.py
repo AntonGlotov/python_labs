@@ -26,3 +26,15 @@ def print_mass_ch_nch(massive):
         list1.append(i) if i % 2 == 0 else list2.append(i)
     print(list1)
     print(list2)
+
+
+def oper_with_list(list):
+    L1 = []
+    L2 = []
+    for i in list:
+        if i not in L1:
+            L1.append(i)
+    for i in L1:
+        L2.append(list.count(i))
+    return L1, L2
+
