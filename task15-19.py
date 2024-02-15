@@ -17,3 +17,12 @@ def shift_mass(massive):
         massive[i] = massive[i+1]
     massive[len(massive) - 1] = temp
     return massive
+
+
+def print_mass_ch_nch(massive):
+    list1 = []
+    list2 = []
+    for i in massive:
+        list1.append(i) if i % 2 == 0 else list2.append(i)
+    print(list1)
+    print(list2)
