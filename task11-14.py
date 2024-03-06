@@ -68,3 +68,16 @@ def frequency_in_str(s, c):
     return count / len(s)
 
 
+# Самый частый символ
+def sup_find_symb(list):
+    charfrequency = {}
+    for string in list:
+        for char in string:
+            if char in charfrequency:
+                charfrequency[char] += 1
+            else:
+                charfrequency[char] = 1
+    rt = max(charfrequency, key=charfrequency.get)
+    return rt, charfrequency[rt]
+
+
