@@ -107,3 +107,36 @@ def count_consonant_vowel(s):
             count += 1
     return count
 
+# 3 В порядке увеличения разницы между частотой наиболее часто
+# встречаемого символа в строке и частотой его появления в алфавите.
+string1 = []
+a = input('Введите строку: ')
+while a != '0':
+    string1.append(a)
+    a = input('Введите строку: ')
+c = sentences1(string1)
+d = find_all(string1)
+str1 = string1
+print('Упорядоченный список(для 3):')
+string1.sort(key=lambda x: (max_str(sentences(x), x) / len(x) - c[sentences(x)] / d))
+print(string1)
+print('Частоты списка:')
+for i in range(0, len(string1)):
+    print((max_str(sentences(string1[i]), string1[i]) / len(string1[i]) - c[sentences(string1[i])] / d))
+
+# 5 В порядке увеличения частоты квадратичного отклонения
+# встречаемости самого часто встречаемого в строке символа от частоты его
+# встречаемости в текстах на этом алфавите.
+print('Упорядоченный список(для 5):')
+string1.sort(key=lambda x: (max_str(sentences(x), x) / len(x) - (c[sentences(x)] / d)) ** 2)
+print(string1)
+print('Частоты списка:')
+for i in range(0, len(string1)):
+    print((max_str(sentences(string1[i]), string1[i]) / len(string1[i]) - (c[sentences(string1[i])] / d)) ** 2)
+
+
+# 7 В порядке увеличения разницы между частотой наиболее часто
+# встречаемого символа в строке и частотой его появления в алфавите.
+print('Упорядоченный список(для 3):')
+string1.sort(key=lambda x: (count_vowel_consonant(x) / count_consonant_vowel(x)))
+print(string1)
