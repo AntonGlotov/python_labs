@@ -33,3 +33,12 @@ def find_in_all(s, c):
     return count
 
 
+# Количество вхождений символа в строки
+def find_all(a):
+    count = 0
+    for i in a:
+        count += len(i)
+    return count
+
+
+#
