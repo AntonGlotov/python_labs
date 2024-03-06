@@ -42,3 +42,20 @@ def find_all(a):
 
 
 #
+def max_str(c, a):
+    count = 0
+    for i in a:
+        if i == c:
+            count += 1
+    return count
+
+
+# Находим колчество символов в строке
+def count_chars_in_list(list):
+    count = 0
+    for i in range(len(list)):
+        for j in range(len(list[i])):
+            count += 1
+    return count
+
+
