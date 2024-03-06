@@ -23,3 +23,13 @@ def sentences1(sentence):
     return char_counts
 
 
+# Количество вхождений символа в строку
+def find_in_all(s, c):
+    count = 0
+    for i in s:
+        for j in i:
+            if s[i][j] == c:
+                count += 1
+    return count
+
+
