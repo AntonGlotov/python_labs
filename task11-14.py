@@ -11,3 +11,15 @@ def sentences(sentence):
     return s
 
 
+# Найти самый часто встречаемы символ в строках
+def sentences1(sentence):
+    char_counts = {}
+    for i in sentence:
+        for j in i:
+            if j not in char_counts:
+                char_counts[j] = 1
+            else:
+                char_counts[j] += 1
+    return char_counts
+
+
