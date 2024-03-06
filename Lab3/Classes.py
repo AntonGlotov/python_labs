@@ -55,3 +55,17 @@ class Rectangle:
             turtle.left(90)
         turtle.end_fill()
 
+
+rect = Rectangle(color="brown")
+rect.draw()
+rect.move(0, 100)
+rect.draw()
+tri = Triangle(0, 200, 200)
+tri.draw()
+rect.color = "white"
+rect.size = 50
+rect.move(50, -75)
+rect.draw()
+rect.move(0, 100)
+rect.draw()
+turtle.done()
