@@ -84,9 +84,9 @@ def sup_find_symb(list):
 # Проверка на гласную
 def is_vowel(symb):
     russian_code = [ord('А'), ord('я')]
-    vowels = [ord('А'),ord('О'),ord('У'),ord('Е'),ord('И'), ord('Э'),ord('Ю'),ord('Я')]
-    for i in vowels:
-        vowels.append(vowels[i]+32)
+    vowels = [ord('А'), ord('О'), ord('У'), ord('Е'), ord('И'), ord('Э'), ord('Ю'), ord('Я')]
+    # for i in vowels:
+    #     vowels.append(vowels[i] + 32)
     if ord(symb) in vowels:
         return True
     return False
@@ -94,18 +94,22 @@ def is_vowel(symb):
 
 def count_vowel_consonant(s):
     count = 0
-    for i in range(len(s)-1):
-        if is_vowel(s[i]) and not is_vowel(s[i+1]):
+    for i in range(len(s) - 1):
+        if is_vowel(s[i]) and not is_vowel(s[i + 1]):
             count += 1
     return count
 
 
 def count_consonant_vowel(s):
     count = 0
-    for i in range(len(s)-1):
-        if not is_vowel(s[i]) and is_vowel(s[i+1]):
+    for i in range(len(s) - 1):
+        if not is_vowel(s[i]) and is_vowel(s[i + 1]):
             count += 1
-    return count
+    if count != 0:
+        return count
+    else:
+        return 1
+
 
 # 3 В порядке увеличения разницы между частотой наиболее часто
 # встречаемого символа в строке и частотой его появления в алфавите.
@@ -134,9 +138,18 @@ print('Частоты списка:')
 for i in range(0, len(string1)):
     print((max_str(sentences(string1[i]), string1[i]) / len(string1[i]) - (c[sentences(string1[i])] / d)) ** 2)
 
-
-# 7 В порядке увеличения разницы между частотой наиболее часто
-# встречаемого символа в строке и частотой его появления в алфавите.
-print('Упорядоченный список(для 3):')
+# 7 В порядке увеличения разницы между количеством сочетаний
+# «гласная-согласная» и «согласная-гласная» в строке.
+print('Упорядоченный список(для 7):')
 string1.sort(key=lambda x: (count_vowel_consonant(x) / count_consonant_vowel(x)))
+print(string1)
+
+# 12 В порядке увеличение квадратичного отклонения частоты
+# встречаемости самого распространенного символа в наборе строк от частоты
+# его встречаемости в данной строке.
+c = sentences1(string1)
+d = find_all(string1)
+str1 = string1
+print('Упорядоченный список(для 12):')
+string1.sort(key=lambda x: (max_str(sentences(x), x) / len(x) - c[sentences(x)] / d))
 print(string1)
