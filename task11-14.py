@@ -59,3 +59,12 @@ def count_chars_in_list(list):
     return count
 
 
+# Возвращает частоту вхождения символа в строку
+def frequency_in_str(s, c):
+    count = 0
+    for i in range(len(s)):
+        if s[i] == c:
+            count += 1
+    return count / len(s)
+
+
