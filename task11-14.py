@@ -80,4 +80,14 @@ def sup_find_symb(list):
     rt = max(charfrequency, key=charfrequency.get)
     return rt, charfrequency[rt]
 
+#Провекра на гласную
+def is_vowel(symb):
+    russian_code = [ord('А'), ord('я')]
+    vowels = [ord('А'),ord('О'),ord('У'),ord('Е'),ord('И'), ord('Э'),ord('Ю'),ord('Я')]
+    for i in vowels:
+        vowels.append(vowels[i]+32)
+    if ord(symb) in vowels:
+        return True
+    return False
+
 
